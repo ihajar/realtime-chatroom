@@ -1,0 +1,8 @@
+.chat {
+    background: #A770EF;  
+    background: -webkit-linear-gradient(to left, #99FFAD, #CF8BF3, #A770EF); 
+    background: linear-gradient(to left, #99FFAD, #CF8BF3, #A770EF);  
+    height: 100vh;
+    display: grid;
+    place-items: center;  
+}
