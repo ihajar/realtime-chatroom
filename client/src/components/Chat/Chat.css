@@ -1,8 +1,21 @@
 .chat {
-    background: #A770EF;  
-    background: -webkit-linear-gradient(to left, #99FFAD, #CF8BF3, #A770EF); 
-    background: linear-gradient(to left, #99FFAD, #CF8BF3, #A770EF);  
+    background: #0B121D;
     height: 100vh;
     display: grid;
     place-items: center;  
+}
+
+.chat__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90vw;
+    height: 90vh;
+    background: #F0F3F9;
+    border-radius: 20px;
+    box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.2);
+}
+
+.chat__body {
+    flex: 1;
 }

@@ -1,0 +1,31 @@
+.inforsidebar {
+    background: #F9C1B4;
+    width: 100%;
+    height: 90px;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.inforsidebar__left {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+}
+.inforsidebar__left > h3 {
+   margin: 5px;
+   padding-left: 10px;
+   font-size: 30px;
+   color: #385790;
+}
+
+.inforsidebar__right {
+    margin: 30px 40px;
+}
+.inforsidebar__link {
+    text-decoration: none;
+    font-size: xx-large;
+}
+.inforsidebar__icon {
+    color: #385790;
+}
