@@ -1,22 +1,25 @@
 .inputbody {
     /* background: blueviolet; */
+    
 }
 .form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: sticky;
    
 }
 .input {
     flex: 1;
     height: 50px;
     border: none;
-    background: #d3d0cb;
+    background: #FDF0EC;
     padding-left: 20px;
+    padding-right: 20px;
     font-size: 18px;
     border-radius: 0px 0px 0px 10px;
-
+    text-align: left;
 }
 .sendButton {
     background: transparent !important;
@@ -29,3 +32,7 @@
     color: #385790;
 }
 
+input:focus, textarea:focus, select:focus{
+    outline: none;
+  }
+  

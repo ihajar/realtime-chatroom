@@ -3,9 +3,10 @@ import queryString from 'query-string';
 import io from 'socket.io-client';
 
 import './Chat.css';
-import InfosideBar from '../InfosideBar/InfosideBar';
+import InfoBar from '../InfoBar/InfoBar';
 import InputBody from '../InputBody/InputBody';
-
+import MessagesBody from '../MessagesBody/MessagesBody';
+import SideBar from '../SideBar/SideBar';
 
 let socket;
 
@@ -14,8 +15,11 @@ const Chat = ({ location }) => {
     const [room, setRoom] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [users, setUsers] = useState('');
 
     const ENDPOINT = 'localhost:5000';
+
+    
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
@@ -38,10 +42,16 @@ const Chat = ({ location }) => {
     }, [ENDPOINT, location.search]);
 
     useEffect(() => {
+
         socket.on('message', (message) => {
             setMessages([...messages, message]);
-        })
-    }, [messages]);
+        });
+
+        socket.on('roomData', ({ users }) => {
+            setUsers(users);
+        });
+
+    }, []);
 
     // function for sending messages
 
@@ -60,14 +70,23 @@ const Chat = ({ location }) => {
         <div className="chat">
             <div className="chat__container">
                 <div className="chat__header">
-                    <InfosideBar room={room} />
+                    <InfoBar room={room} />
                 </div>
-                
-                <div className="chat__body">
-
+                <div className="chat_-bodyContainer">
+                    <div className="chat__bodySide">
+                        <SideBar  users={users} />
+                    </div>
+                    <div className="chat__body">
+                        <MessagesBody messages={messages} name={name} />
+                    </div>
+                   
                 </div>
                 <div className="chat__footer">
-                    <InputBody message={message} setMessage={setMessage} sendMessage={sendMessage} />
+                    <div className="chat__footerFoot"></div>
+                    <div className="chat__footerInput">
+                        <InputBody message={message} setMessage={setMessage} sendMessage={sendMessage} />
+                    </div>
+                    
                 </div>
               
             </div> 

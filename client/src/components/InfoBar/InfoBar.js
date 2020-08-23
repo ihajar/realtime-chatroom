@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Avatar, IconButton } from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
-import './InfosideBar.css';
+import './InfoBar.css';
 
-const InfosideBar = ({ room }) => {
+const InfoBar = ({ room }) => {
     const [seed, setSeed] = useState("");
 
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000));
     }, []);
+
     return (
-        <div className="inforsidebar">
-            <div className="inforsidebar__left">
+        <div className="infobar">
+            <div className="infobar__left">
             <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} />
             <h3>Channel_{room}</h3>
             </div>
-            <div className="inforsidebar__right">
-                <Link to="/" className="inforsidebar__link">
-                    <ExitToAppIcon className="inforsidebar__icon" style={{ fontSize: 30 }}  />
+            <div className="infobar__right">
+                <Link to="/" className="infobar__link">
+                    <ExitToAppIcon className="infobar__icon" style={{ fontSize: 30 }}  />
                 </Link>
             </div>
             
@@ -27,4 +28,4 @@ const InfosideBar = ({ room }) => {
     )
 }
 
-export default InfosideBar
+export default InfoBar;
