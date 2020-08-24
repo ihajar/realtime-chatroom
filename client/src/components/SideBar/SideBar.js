@@ -3,7 +3,7 @@ import { Avatar } from '@material-ui/core';
 
 import './SideBar.css';
 
-const SideBar = ({ users, user, name }) => {
+const SideBar = ({ users }) => {
     // const [seed, setSeed] = useState("");
 
     // useEffect(() => {

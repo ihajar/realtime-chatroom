@@ -84,8 +84,12 @@
     }
 
     .join__heading {
-        font-size: 58px;
-        line-height: 76px;
-        width: 100%;
+        font-size: 52px;
+        line-height: normal;
+        width: 80%;
+        padding-bottom: 20px;
+    }
+    .join__button {
+        margin: 15px;
     }
 }

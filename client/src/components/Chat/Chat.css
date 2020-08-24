@@ -28,9 +28,11 @@
 .chat__body {
     flex: .8;
     margin: 20px 20px;
+    /* height: 80%; */
     /* overflow: scroll; */
-    overflow-x: hidden; 
-    overflow-y: auto; 
+    /* overflow-x: hidden; 
+    overflow-y: auto;  */
+    
 }
 
 .chat__footer {
@@ -44,7 +46,7 @@
 
 .chat__footerInput {
     width: 80%;
-
+    position: sticky;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
